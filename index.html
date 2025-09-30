@@ -16,6 +16,7 @@
         <div class="card mb-4">
             <div class="card-body">
                 <h2 class="card-title">Kalibrointi (ensimmäinen erä)</h2>
+                <p class="text-muted">Syötä ensimmäisen erän tiedot kalibroidaksesi kuivurin haihdutusnopeus. Viljan paino vaikuttaa laskemiseen, koska se määrää haihdutettavan veden määrän.</p>
                 <form id="kalibrointiForm" onsubmit="event.preventDefault(); kalibroi();">
                     <div class="mb-3">
                         <label for="viljalaji_kalibrointi" class="form-label">Viljalaji</label>
@@ -58,6 +59,7 @@
         <div class="card mb-4">
             <div class="card-body">
                 <h2 class="card-title">Seuraavan erän ennuste</h2>
+                <p class="text-muted">Syötä seuraavan erän tiedot ennustaaksesi kuivausajan. Viljan paino vaikuttaa laskemiseen, koska se määrää haihdutettavan veden määrän.</p>
                 <form id="ennusteForm" onsubmit="event.preventDefault(); ennusta();">
                     <div class="mb-3">
                         <label for="viljalaji_ennuste" class="form-label">Viljalaji</label>
@@ -98,28 +100,35 @@
 
         <!-- Tulos ja historia -->
         <div id="tulos" class="alert alert-info" role="alert" style="display: none;"></div>
-        <div class="card">
+        <div class="card mb-4">
             <div class="card-body">
                 <h2 class="card-title">Historia</h2>
-                <table class="table table-striped" id="historia">
-                    <thead>
-                        <tr>
-                            <th>Tyyppi</th>
-                            <th>Viljalaji</th>
-                            <th>Alkukosteus (%)</th>
-                            <th>Loppukosteus (%)</th>
-                            <th>Paino (kg)</th>
-                            <th>Kuivausaika (h)</th>
-                            <th>Lämpötila (°C)</th>
-                            <th>Ilmankosteus (% RH)</th>
-                            <th>Haihdutusnopeus (kg/h)</th>
-                            <th>Toiminnot</th>
-                        </tr>
-                    </thead>
-                    <tbody id="historiaTaulukko"></tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="historia">
+                        <thead>
+                            <tr>
+                                <th>Tyyppi</th>
+                                <th>Viljalaji</th>
+                                <th>Alkukosteus (%)</th>
+                                <th>Loppukosteus (%)</th>
+                                <th>Paino (kg)</th>
+                                <th>Kuivausaika (h)</th>
+                                <th>Lämpötila (°C)</th>
+                                <th>Ilmankosteus (% RH)</th>
+                                <th>Haihdutusnopeus (kg/h)</th>
+                                <th>Toiminnot</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historiaTaulukko"></tbody>
+                    </table>
+                </div>
             </div>
         </div>
+
+        <!-- Alatunniste -->
+        <footer class="text-center mt-4 mb-4">
+            <p class="text-muted">&copy; Jukkolan tila Oy, 2025</p>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
