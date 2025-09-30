@@ -16,7 +16,7 @@
         <div class="card mb-4">
             <div class="card-body">
                 <h2 class="card-title">Kalibrointi (ensimmäinen erä)</h2>
-                <form id="kalibrointiForm">
+                <form id="kalibrointiForm" onsubmit="event.preventDefault(); kalibroi();">
                     <div class="mb-3">
                         <label for="viljalaji_kalibrointi" class="form-label">Viljalaji</label>
                         <select class="form-select" id="viljalaji_kalibrointi" required>
@@ -49,7 +49,7 @@
                         <label for="ilmankosteus_1" class="form-label">Ilmankosteus (% RH)</label>
                         <input type="number" class="form-control" id="ilmankosteus_1" value="50" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" onclick="kalibroi()">Kalibroi</button>
+                    <button type="submit" class="btn btn-primary">Kalibroi</button>
                 </form>
             </div>
         </div>
@@ -58,7 +58,7 @@
         <div class="card mb-4">
             <div class="card-body">
                 <h2 class="card-title">Seuraavan erän ennuste</h2>
-                <form id="ennusteForm">
+                <form id="ennusteForm" onsubmit="event.preventDefault(); ennusta();">
                     <div class="mb-3">
                         <label for="viljalaji_ennuste" class="form-label">Viljalaji</label>
                         <select class="form-select" id="viljalaji_ennuste" required>
@@ -87,8 +87,12 @@
                         <label for="ilmankosteus_2" class="form-label">Ilmankosteus (% RH)</label>
                         <input type="number" class="form-control" id="ilmankosteus_2" value="60" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" onclick="ennusta()">Ennusta kuivausaika</button>
+                    <button type="submit" class="btn btn-primary">Ennusta kuivausaika</button>
                 </form>
+                <div class="mt-3">
+                    <label class="form-label">Ennustettu kuivausaika (h):</label>
+                    <input type="text" class="form-control" id="ennustettu_kuivausaika" readonly>
+                </div>
             </div>
         </div>
 
@@ -96,14 +100,19 @@
         <div id="tulos" class="alert alert-info" role="alert" style="display: none;"></div>
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title">Kalibrointihistoria</h2>
+                <h2 class="card-title">Historia</h2>
                 <table class="table table-striped" id="historia">
                     <thead>
                         <tr>
+                            <th>Tyyppi</th>
                             <th>Viljalaji</th>
-                            <th>Haihdutusnopeus (kg/h)</th>
+                            <th>Alkukosteus (%)</th>
+                            <th>Loppukosteus (%)</th>
+                            <th>Paino (kg)</th>
+                            <th>Kuivausaika (h)</th>
                             <th>Lämpötila (°C)</th>
                             <th>Ilmankosteus (% RH)</th>
+                            <th>Haihdutusnopeus (kg/h)</th>
                             <th>Toiminnot</th>
                         </tr>
                     </thead>
