@@ -1,18 +1,20 @@
 # Viljankuivauslaskuri
 
-Selainpohjainen laskuri viljankuivauksen keston arvioimiseen. Tukee eri viljoja (ohra, vehnä, kaura) ja dynaamista kalibrointia ilman koodin muokkausta. Kalibrointitiedot tallennetaan selaimen localStorage-muistiin.
+Selainpohjainen laskuri viljankuivauksen keston arvioimiseen. Tukee eri viljoja (ohra, vehnä, kaura) ja dynaamista kalibrointia ilman koodin muokkausta. Kalibrointitiedot ja historia tallennetaan selaimen localStorage-muistiin.
 
 ## Ominaisuudet
 - Kalibroi kuivurin haihdutusnopeus ensimmäisen erän tiedoilla.
 - Ennusta seuraavan erän kuivausaika eri viljoille.
+- Näyttää ennustetun kuivausajan erillisessä kentässä.
+- Tallenna kalibroinnit ja ennusteet historiaan.
 - Responsiivinen käyttöliittymä (toimii mobiililaitteilla ja tietokoneilla).
-- Näyttää kalibrointihistorian ja mahdollistaa kalibrointien poistamisen.
+- Mahdollistaa kalibrointien poistamisen.
 
 ## Käyttö
 1. Avaa laskuri: [https://kayttajatunnus.github.io/viljankuivauslaskuri/](https://kayttajatunnus.github.io/viljankuivauslaskuri/)
-2. Syötä ensimmäisen erän tiedot (viljalaji, alkukosteus, loppukosteus, paino, kuivausaika, lämpötila, ilmankosteus) kalibroidaksesi kuivurin.
+2. Syötä ensimmäisen erän tiedot kalibroidaksesi kuivurin.
 3. Syötä seuraavan erän tiedot ennustaaksesi kuivausajan.
-4. Tarkastele kalibrointihistoriaa ja poista kalibrointeja tarpeen mukaan.
+4. Tarkastele kalibrointi- ja ennustehistoriaa taulukosta.
 
 ## Asennus
 1. Kloonaa repositorio:
